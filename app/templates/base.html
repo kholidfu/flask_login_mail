@@ -29,6 +29,13 @@
 	    <li>
 	      <a href="#">Contact</a>
 	    </li>
+	    {% if 'email' in session %}
+	    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+	    <li><a href="{{ url_for('signout') }}">Signout</a></li>
+	    {% else %}
+	    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+	    <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+	    {% endif %}
 	  </ul>
 	  <h3 class="muted">
 	    Project name
